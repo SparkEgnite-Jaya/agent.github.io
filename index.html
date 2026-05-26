@@ -222,6 +222,11 @@
 		try {
 			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
 
+			window.addEventListener("onEmbeddedMessagingReady", () {
+				console.log("Received the onEmbeddedMessagingReady event_");
+				embeddedservice_bootstrap.prechatAPI.setVisiblePrechatFields({ "customerEmail": "test" });
+			}
+
 			embeddedservice_bootstrap.init(
 				'00DgK00000BRqk9',
 				'Github',
